@@ -1,0 +1,146 @@
+.input_w {
+  position: relative;
+}
+
+.input_v1 {
+  display: block;
+  width: 100%;
+  padding: 3px;
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: -.015em;
+}
+
+.input_v2 {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  height: 45px;
+  font-style: italic;
+  font-size: 12px;
+  border: 3px solid #ff8100;
+  background: #fff;
+  letter-spacing: -.015em;
+}
+
+.select_v1 {
+  text-align: left;
+  position: relative;
+
+  .select2-container {
+    min-width: 100%;
+
+    &.select2-container--open {
+      z-index: 2;
+    }
+  }
+
+  .select2-container--default {
+
+    .select2-search--dropdown .select2-search__field {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .select2-results > .select2-results__options {
+      max-height: 15em;
+      //border: solid #000;
+      //border-width: 0 2px 2px;
+    }
+
+    .select2-dropdown {
+      border-radius: 0 !important;
+      width: auto !important;
+      min-width: 100%;
+      border: 1px solid #000;
+
+      &.select2-dropdown--below {
+        margin-top: -1px;
+      }
+
+      &.select2-dropdown--above {
+        margin-bottom: -1px;
+      }
+    }
+
+    .select2-results__option {
+      line-height: 1;
+      padding: .65em;
+    }
+
+    .select2-container {
+
+    }
+
+    .select2-selection__rendered {
+      padding: 0;
+      border-bottom: 1px dashed #000;
+      color: #000;
+      line-height: normal;
+    }
+
+    .select2-selection__placeholder {
+      color: $placeholder_color;
+
+    }
+
+    .select2-selection--single {
+      @include transition_all(border .3s);
+      background: none;
+      border: none;
+      box-shadow: none;
+      height: auto;
+
+      &:hover {
+        //border-color: #000;
+
+        .select2-selection__arrow:before {
+
+        }
+      }
+    }
+
+    .select2-selection__arrow {
+      display: none;
+
+      &:after,
+      &:before {
+        @include transition_all(border-color .3s);
+        position: absolute;
+        content: '';
+        height: 0;
+        top: 50%;
+        right: .25em;
+        border-left: .5em solid transparent;
+        border-right: .5em solid transparent;
+      }
+
+      &:before {
+        border-bottom: .5em solid #ccc;
+        margin-top: -.7em;
+      }
+
+      &:after {
+        margin-top: 0;
+        border-top: .5em solid #ccc;
+      }
+
+      b {
+        display: none;
+      }
+    }
+  }
+
+  .select2-container--open {
+    .select2-selection__arrow {
+
+      &:after {
+        border-top-color: #000;
+      }
+
+      &:before {
+        border-bottom-color: #000;
+      }
+    }
+  }
+}

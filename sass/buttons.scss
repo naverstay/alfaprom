@@ -1,0 +1,72 @@
+//************  buttons
+
+.btn_v1 {
+  position: absolute;
+
+  &.search_btn {
+    z-index: 1;
+    cursor: pointer;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: none;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      display: block;
+
+      path {
+        fill: #ff8e1a;
+      }
+    }
+  }
+}
+
+.btn_v2 {
+  height: 45px;
+
+  &.hero_btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 16px 37px 12px;
+    font: bold 16px/17px $PTSans;
+    margin-top: 12px;
+    margin-right: 30px;
+  }
+
+  &.subscribe_btn {
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 16px 37px 12px;
+    font: bold 16px/17px $PTSans;
+    margin-top: 12px;
+    margin-right: 30px;
+
+    @include respond-to-min($resp_step_1) {
+      padding: 16px 77px 12px;
+    }
+  }
+}
+
+.orange_btn {
+  @include transition_all(background .3s);
+  background: #ff8100;
+  color: #fff;
+
+  &:hover {
+    background: darken(#ff8100, 5%);
+  }
+}
+
+.green_btn {
+  color: #fff;
+}
+
+.btn_red {
+  color: #fff;
+  background: #f46b65;
+}
