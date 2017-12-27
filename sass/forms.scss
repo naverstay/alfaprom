@@ -56,6 +56,11 @@
 
       &.select2-dropdown--below {
         margin-top: -1px;
+
+        @include respond-to-max($resp_step_1) {
+          left: auto !important;
+          right: 0 !important;
+        }
       }
 
       &.select2-dropdown--above {

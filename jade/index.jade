@@ -5,11 +5,11 @@ html(lang='ru')
 
   body
     .wrapper
+      +header()
+
       //.rect_1024
       .base
-        +header()
-
-        div.main_content
+        .main_content
           +hero_block()
 
           .tabContainer.tab_container
@@ -105,8 +105,8 @@ html(lang='ru')
           .reviews_block
             .section_inner
               .review_slider
-                .review_slider_corner_left
-                .review_slider_corner_right
+                .review_slider_corner_left.dt_only
+                .review_slider_corner_right.dt_only
                 .reviewSlider
                   +loop_while(5)
                     .review_slide

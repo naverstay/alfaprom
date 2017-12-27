@@ -1,6 +1,7 @@
-var heroSlider;
+var heroSlider, html;
 
 $(function ($) {
+  html = $('html');
 
   initSelect();
 
@@ -8,12 +9,83 @@ $(function ($) {
 
   initTabs();
 
+  browserCheck();
+
+  $('body').delegate('.openMobMenu', 'click', function () {
+    if (html.hasClass('_menu_opened')) {
+      html.removeClass('_menu_opened').css('margin-right', '');
+    } else {
+      html.addClass('_menu_opened').css('margin-right', getScrollbarWidth());
+    }
+
+    return false;
+  });
+
   $('.bsOnLoad').each(function () {
     var img = $(this);
     img.parent().backstretch(img.attr('src'));
   });
 
 });
+
+function browserCheck() {
+  var myNav = navigator.userAgent.toLowerCase(), ie,
+    html = document.documentElement;
+
+  if ((myNav.indexOf('msie') != -1)) {
+    ie = ((myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false);
+    html.className += ' msie';
+    html.className += ' ie' + ie;
+  } else if (!!myNav.match(/trident.*rv\:11\./)) {
+    ie = 11;
+    html.className += ' ie' + ie;
+  }
+
+  if (myNav.indexOf('safari') != -1) {
+    if (myNav.indexOf('chrome') == -1) {
+      html.className += ' safari';
+    } else {
+      html.className += ' chrome';
+    }
+  }
+
+  if (myNav.indexOf('firefox') != -1) {
+    html.className += ' firefox';
+  }
+
+  if ((myNav.indexOf('windows') != -1)) {
+    html.className += ' windows';
+  }
+
+  if (/ipad|iphone|ipod/ig.test(myNav) && !window.MSStream) {
+    html.className += ' ios';
+  }
+}
+
+function getScrollbarWidth() {
+  var outer = document.createElement("div");
+  outer.style.visibility = "hidden";
+  outer.style.width = "100px";
+  outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+
+  document.body.appendChild(outer);
+
+  var widthNoScroll = outer.offsetWidth;
+  // force scrollbars
+  outer.style.overflow = "scroll";
+
+  // add innerdiv
+  var inner = document.createElement("div");
+  inner.style.width = "100%";
+  outer.appendChild(inner);
+
+  var widthWithScroll = inner.offsetWidth;
+
+  // remove divs
+  outer.parentNode.removeChild(outer);
+
+  return widthNoScroll - widthWithScroll;
+}
 
 function plural(n, str1, str2, str5) {
   return n + ' ' + ((((n % 10) === 1) && ((n % 100) !== 11)) ? (str1) : (((((n % 10) >= 2) && ((n % 10) <= 4)) && (((n % 100) < 10) || ((n % 100) >= 20))) ? (str2) : (str5)))

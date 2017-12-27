@@ -73,7 +73,7 @@ function initCertificatesSlider() {
     touchThreshold: 10,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2

@@ -4,10 +4,11 @@ mixin dev_head(page_title)
         |
         | <!-- saved from url=(0014)about:internet -->
         meta(charset='utf-8')
-        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        meta(name='viewport', content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0")
         meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
         meta(name="apple-mobile-web-app-capable", content="yes")
         meta(name="format-detection", content="telephone=no")
+        meta(name="theme-color" content="#ff8100")
 
 mixin loop_while(counter)
     -i=0;
@@ -27,6 +28,9 @@ mixin svg(icon)
 
 mixin header(active)
   .header
+    .header_shadow
+    .header_nav_overlay.openMobMenu
+    a.mob_menu_btn._slider_close_btn.openMobMenu(href='#')
     .header_info
       .section_inner.clearfix
         .header_region
@@ -43,8 +47,8 @@ mixin header(active)
 
         .logo_block
           a.logo(href='#')
-            span.logo_img: img(src='i/logo_o.png' width=83 height=74)
-            span.logo_text
+            span.logo_img: img(src='i/logo_o.png')
+            span.logo_text.mob_hidden
               span.logo_name Альфапром
               span Оптовая продажа упаковочных материалов и оборудования
 
@@ -333,7 +337,33 @@ mixin footer()
             a.footer_link(href='#')
               span Контакты
 
+      .footer_col._action
+        ul.footer_action
+          li
+            a.action_link(href='#')
+              img(src='i/v.png')
+          li
+            a.action_link(href='#')
+              img(src='i/f.png')
+          li
+            a.action_link(href='#')
+              img(src='i/i.png')
+          li
+            a.action_link(href='#')
+              img(src='i/t.png')
+
+        a.footer_phone(href='tel:+78462052250')
+          span.clr_white +
+          span 7 (846) 205-22-50
+
+        ul.nav_top
+          li.nav_item._location
+            .dm
+              a.nav_link(href='#') г. Самара, Московское шоссе 55
+
       .footer_info
+        .footer_col._right
+          .footer_counters
         .footer_col
           .logo_block
             a.logo(href='#')
@@ -343,10 +373,6 @@ mixin footer()
                 span Упаковочные материалы<br>оптом в Самаре
         .footer_col._wide
           .copyright Все права защищены.<br>Использование материалов с сайта<br>разрешено только с согласия правообладателя.
-
-        .footer_col._right
-          .footer_counters
-
 
 mixin scripts(index, contacts)
   link(rel='stylesheet', href='styles/main_global.css', media='all')

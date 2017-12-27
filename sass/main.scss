@@ -1,8 +1,13 @@
-html, body {
+html {
   height: 100%;
+
+  &._menu_opened {
+    overflow: hidden;
+  }
 }
 
 html {
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -41,7 +46,11 @@ body {
 .wrapper {
   position: relative;
   min-height: 100%;
-  padding: 170px 0 0;
+  padding: 70px 0 0;
+
+  @include respond-to-min($resp_step_2) {
+    padding-top: 170px;
+  }
 }
 
 .base {
@@ -230,11 +239,15 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 75px 50px;
+  padding: 25px 50px;
 
   p {
     margin-bottom: 5px;
     font-weight: 400;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    padding: 75px 50px;
   }
 }
 
@@ -266,7 +279,7 @@ $hex_border: 3px;
   position: relative;
   overflow: hidden;
   padding: 48px 0;
-  margin: 20px 0;
+  margin: 20px auto;
   width: $hex_width;
 }
 
@@ -459,7 +472,6 @@ $hex_border: 3px;
 
   &:after {
     @include transition_all(border-width .3s);
-    content: '';
     position: absolute;
     left: 50%;
     top: 100%;
@@ -467,7 +479,13 @@ $hex_border: 3px;
     border-left: 11px solid transparent;
     border-right: 11px solid transparent;
     border-top: 0 solid #000;
+  }
 
+  @include respond-to-min($resp_step_1) {
+    &:after,
+    span:before {
+      content: '';
+    }
   }
 
   span {
@@ -478,7 +496,6 @@ $hex_border: 3px;
     &:before {
       @include transition_all(border-width .3s);
       z-index: 1;
-      content: '';
       position: absolute;
       left: 50%;
       top: 100%;
@@ -546,11 +563,11 @@ $hex_border: 3px;
     border-radius: 100%;
     box-shadow: 0 20px 80px rgba(0, 0, 0, .5);
   }
-
 }
 
 .filter_col {
   position: relative;
+  margin-bottom: 25px;
 
   @include respond-to-min($resp_step_1) {
     float: left;
@@ -563,7 +580,6 @@ $hex_border: 3px;
   @include respond-to-min($resp_step_2) {
     width: 25%;
   }
-
 }
 
 .filter_more_block {
@@ -622,8 +638,7 @@ $hex_border: 3px;
 .filter_tab {
   @extend %clearfix;
   position: relative;
-  padding: 26px 0 35px;
-  margin: 0 -10px;
+  padding: 26px 0 15px;
 
   @include respond-to-min($resp_step_2) {
     margin: 0 -20px;
@@ -742,13 +757,16 @@ $hex_border: 3px;
 .news_list {
   @extend %clearfix;
   margin-left: -20px;
+  font-size: 0;
 
   li {
     padding-left: 20px;
     margin-bottom: 30px;
+    font-size: 14px;
 
     @include respond-to-min($resp_step_1) {
-      float: left;
+      display: inline-block;
+      vertical-align: top;
       width: 50%;
     }
 
@@ -823,17 +841,20 @@ $hex_border: 3px;
 
 .reviews_block {
   position: relative;
-  border: dashed #ff8a00;
-  border-width: 1px 0;
   margin: -16px 0 36px;
 
-  &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 0;
-    left: 0;
-    border-top: 1px dashed #ff8a00;
+  @include respond-to-min($resp_step_2) {
+    border: dashed #ff8a00;
+    border-width: 1px 0;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      left: 0;
+      border-top: 1px dashed #ff8a00;
+    }
   }
 }
 
@@ -955,11 +976,15 @@ $koef: 1.3;
 
 .review_slide_content {
   @extend %clearfix;
-  padding: 16px 10px 18px 10px;
+  padding: 16px 10px 28px 10px;
 
   p {
     line-height: 1.45;
     font-weight: 400;
+
+    .safari.ios & {
+      font-size: 8px;
+    }
   }
 
   @include respond-to-min($resp_step_1) {
@@ -969,6 +994,7 @@ $koef: 1.3;
 
 .review_img {
   text-align: center;
+  margin-bottom: 25px;
 
   img {
     display: inline-block;
@@ -979,6 +1005,7 @@ $koef: 1.3;
   @include respond-to-min($resp_step_1) {
     float: left;
     margin-right: 20px;
+    margin-bottom: 0;
   }
 }
 
@@ -1044,7 +1071,7 @@ $koef: 1.3;
     }
 
     &.slick-prev {
-      left: 17px;
+      left: 7px;
 
       &:before {
         border-right: 20px solid #fda134;
@@ -1063,10 +1090,14 @@ $koef: 1.3;
           border-right-color: #fb8922;
         }
       }
+
+      @include respond-to-min($resp_step_2) {
+        left: 17px;
+      }
     }
 
     &.slick-next {
-      right: 15px;
+      right: 5px;
 
       &:before {
         border-left: 20px solid #fda134;
@@ -1085,6 +1116,10 @@ $koef: 1.3;
           border-left-color: #fb8922;
         }
       }
+
+      @include respond-to-min($resp_step_2) {
+        right: 15px;
+      }
     }
   }
 }
@@ -1096,7 +1131,7 @@ $koef: 1.3;
     border: 2px solid #ff8a00;
     position: relative;
     padding: 17px;
-    margin-top: -10px;
+    margin: -10px 10px 0;
   }
 
   .slick-list {
@@ -1105,7 +1140,7 @@ $koef: 1.3;
 
   @include respond-to-min($resp_step_1) {
     float: left;
-    margin-bottom: 43px;
+    margin: -10px 0 43px;
     width: 50%;
     padding: 0 30px 0 20px;
 
@@ -1126,7 +1161,7 @@ $koef: 1.3;
 
   .slick-dots {
     @extend %slick_dots_v1;
-    bottom: -8px;
+    bottom: -7px;
   }
 
   .slick-arrow {

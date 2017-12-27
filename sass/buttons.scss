@@ -31,10 +31,14 @@
   &.hero_btn {
     display: inline-block;
     vertical-align: middle;
-    padding: 16px 37px 12px;
+    padding: 16px 17px 12px;
     font: bold 16px/17px $PTSans;
     margin-top: 12px;
-    margin-right: 30px;
+
+    @include respond-to-min($resp_step_1) {
+      margin-right: 30px;
+      padding: 16px 37px 12px;
+    }
   }
 
   &.subscribe_btn {
