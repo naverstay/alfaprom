@@ -21,6 +21,11 @@
   border: 3px solid #ff8100;
   background: #fff;
   letter-spacing: -.015em;
+
+  @at-root textarea#{&} {
+    height: 153px;
+  }
+
 }
 
 .select_v1 {
@@ -149,3 +154,74 @@
     }
   }
 }
+
+.trade_form_holder {
+  padding: 20px;
+  margin-bottom: 40px;
+  background: url(../i/form_bg.png) repeat 50% 50%;
+
+  @include respond-to-min($resp_step_1) {
+
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding: 32px;
+    margin-bottom: 58px;
+  }
+}
+
+.trade_form {
+  padding: 24px 18px 1px;
+  background: #fff;
+
+  .input_v2 {
+    font-size: 16px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding: 24px 28px 1px;
+  }
+}
+
+.form_title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: .028em;
+
+  @include respond-to-min($resp_step_2) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.form_row {
+  @extend %clearfix;
+
+  &._half_cell {
+    margin-left: -43px;
+
+    .form_cell {
+      padding-left: 43px;
+
+      @include respond-to-min($resp_step_1) {
+        float: left;
+        width: 50%;
+
+        &._fr {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.form_cell {
+
+  .trade_form & {
+    margin-bottom: 27px;
+  }
+}
+
+
+

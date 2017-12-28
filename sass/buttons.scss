@@ -28,6 +28,20 @@
 .btn_v2 {
   height: 45px;
 
+  &.trade_btn {
+    display: block;
+    width: 100%;
+    padding: 16px 25px 12px;
+    font: bold 16px/17px $PTSans;
+    text-transform: uppercase;
+
+    @include respond-to-min($resp_step_1) {
+      float: right;
+      width: auto;
+      padding: 16px 90px 12px;
+    }
+  }
+
   &.hero_btn {
     display: inline-block;
     vertical-align: middle;

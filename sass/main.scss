@@ -383,6 +383,19 @@ $hex_border: 3px;
       height: 20px;
     }
 
+    &._auth {
+      &:before {
+        background: url(../i/log_in.png) no-repeat 50% 50%;
+      }
+
+      p {
+        padding-top: 2px;
+        font-style: italic;
+        font-size: 12px;
+        line-height: 1.1;
+      }
+    }
+
     &._lk {
       &:before {
         background: url(../i/user.png) no-repeat 50% 50%;
@@ -742,6 +755,117 @@ $hex_border: 3px;
   }
 }
 
+.news_page_list {
+
+  li {
+    display: block;
+    margin-bottom: 14px;
+  }
+}
+
+.news_unit {
+  @extend %clearfix;
+
+  p {
+    margin-left: 140px;
+    color: #010101;
+    line-height: 1.75;
+    margin-top: -5px;
+    letter-spacing: .02em;
+
+    + p {
+      margin-top: 10px;
+    }
+  }
+}
+
+.news_title {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 16px;
+  letter-spacing: -.022em;
+
+  @include respond-to-min($resp_step_1) {
+    font-size: 21px;
+  }
+}
+
+.news_picture {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  + p {
+    margin-left: 0;
+  }
+}
+
+.news_unit_date {
+  font-size: 14px;
+  font-style: italic;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.pagination_block {
+  padding: 20px 0 30px;
+
+  @include respond-to-min($resp_step_1) {
+    padding: 48px 0 44px;
+  }
+}
+
+.pagination_list {
+  text-align: center;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 3px;
+  }
+}
+
+.pagination_link {
+  @include transition_all(background .3s, color .3s);
+  display: block;
+  background: #fff;
+  border: 3px solid #bcbcbc;
+  text-align: center;
+  color: #000;
+  min-width: 39px;
+  font-size: 17px;
+  line-height: 25px;
+  font-weight: 400;
+
+  span {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    background: #bcbcbc;
+    color: #fff;
+
+    span {
+      text-decoration: none;
+    }
+  }
+
+  ._active & {
+    color: #fff;
+    background: #bcbcbc;
+    cursor: default;
+
+    span {
+      text-decoration: none;
+    }
+  }
+}
+
 .block_caption {
   text-transform: uppercase;
   font-size: 24px;
@@ -751,7 +875,36 @@ $hex_border: 3px;
   &._line {
     text-decoration: underline;
   }
+}
 
+.block_tip {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.trade_list {
+  list-style: none;
+  padding-top: 5px;
+
+  li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 23px;
+      left: 0;
+      top: 7px;
+      background: #ff8100;
+    }
+
+    @include respond-to-min($resp_step_2) {
+      margin-bottom: 32px;
+    }
+  }
 }
 
 .news_list {

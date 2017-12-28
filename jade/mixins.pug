@@ -85,7 +85,7 @@ mixin header(active)
               +menu_link((active === 3 ? '_active' : ''), ref='dealers.html')
                 span.link_text Дилерам
             li.menu_item
-              +menu_link((active === 4 ? '_active' : ''), ref='purchases.html')
+              +menu_link((active === 4 ? '_active' : ''), ref='trade.html')
                 span.link_text Закупки
             li.menu_item
               +menu_link((active === 5 ? '_active' : ''), ref='about.html')
@@ -97,7 +97,7 @@ mixin header(active)
               +menu_link((active === 7 ? '_active' : ''), ref='contacts.html')
                 span.link_text Контакты
 
-mixin hero_block()
+mixin hero_block(unreg)
   .hero_section
     .section_inner.clearfix
       .cart_holder
@@ -112,10 +112,17 @@ mixin hero_block()
 
             .cart_cell
               ul.cart_menu
-                li._lk
-                  a.cart_link(href='#') Личный кабинет
-                li._lk
-                  a.cart_link(href='#') Скидка клиента
+                - if (unreg)
+                  li._auth
+                    a.cart_link(href='#') Вход/Регистрация
+                    p
+                      span.clr_orange *
+                      span Зарегистрируйся и&nbsp;накапливай скидку!
+                - else
+                  li._lk
+                    a.cart_link(href='#') Личный кабинет
+                  li._lk
+                    a.cart_link(href='#') Скидка клиента
                 li._delivery
                   a.cart_link(href='#') Доставка и оплата
 
@@ -260,6 +267,8 @@ mixin filters()
 mixin menu_link(cls, ref)
   - if (cls && cls.length)
     span.menu_link(class= cls)
+      span.menu_corner_l
+      span.menu_corner_r
       block
   - else
     a.menu_link(href= ref)
