@@ -1,0 +1,98 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('Альфапром новость')
+
+  body
+    .wrapper
+      +header()
+
+      .base
+        .main_content
+          +hero_block(true)
+
+          .section_inner
+            .news_unit.mt_30
+              .news_unit_date.fz_12 24 мая 2015г.
+              h1.news_title
+                span Практическая конференция по актуальным вопросам безопасности бизнеса HoReCa
+
+              .news_picture
+                img(src='i/news/conference_2.jpg')
+
+              p Конференция важна для собственников ресторанного бизнеса и профессионалов рынка HoReCa, желающих получить самую актуальную информацию по вопросам защиты бизнеса и управления рисками 2017 года.<br>Партнеры-участники: «Лемчик, Крупский и Партнеры», адвокатское бюро «Лигал арт», ГОСТЕСТ, АТОЛ, iiko, АНО ДПО «Техно-Консалт» и ТМ «Spoom».<br>Место проведения: Конференц-зал «Врубель» легендарного отеля «Метрополь» (Смотреть на Яндекс.картах)<br>Адрес: Театральный проезд, 2 (в шаговой доступности от метро «Театральная»).<br>Дата проведения: 14.09.2017<br>Время проведения: с 10.00 до 18.10<br>Начало регистрации на мероприятие: 21.08.2017
+
+              p.cb Андрей Крупский — автор более 70 статей и комментариев в специализированных изданиях, посвященных налогам и корпоративному праву («Корпоративный юрист», «Расчет», «Financial Director», «Слияния и поглощения», «Практическое налоговое планирование», «Главбух» и отраслевых приложений журнала, «Учет. Налоги. Право», «Практическая бухгалтерия», «Российская юстиция», РБК.
+
+              .video_holder
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/2cO27FtpbHw" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+
+              .video_name Пример вставки видео и размещения подписи
+
+          .section_inner
+            .news_block._mod_1
+              .block_caption._line АКЦИИ И СПЕЦПРЕДЛОЖЕНИЯ
+              ul.news_list
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_1.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Продляем акцию на&nbsp;POLAIR
+                    .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_2.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Спецпредложение на&nbsp;термосы
+                    .news_overview Дополнительная скидка 15%
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_3.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Специальная акция на категории товаров
+                    .news_overview Скидки до 50%
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_4.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Продляем акцию на&nbsp;POLAIR
+                    .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
+
+          .section_inner.clearfix
+            .certificates_block
+              .block_caption.text_center Наши сертификаты
+              .certificatesSlider
+                +loop_while(2)
+                  .certificates_slide
+                    img(src='i/certificate_1.png')
+                  .certificates_slide
+                    img(src='i/certificate_2.png')
+
+                .certificates_controls.certificatesControls
+
+            .contacts_block
+              .block_caption.text_center &nbsp;
+              .subscribe_form
+                form(action='#')
+                  .contacts_tip Хотите вовремя получать информамацию о&nbsp;скидках и спецпредложениях?
+
+                  .form_cell
+                    .input_w
+                      input.input_v2(placeholder='Ваше имя')
+                  .form_cell
+                    .input_w
+                      input.input_v2(placeholder='Эл. почта')
+
+                  a.subscribe_link(href='#') За подписку вы получите 500.00 рублей в подарок!
+
+                  .text_center.form_cell
+                    button.btn_v2.orange_btn.subscribe_btn
+                      span Подписаться
+
+      +footer()
+
+    +scripts()

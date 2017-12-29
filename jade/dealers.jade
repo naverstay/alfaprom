@@ -7,21 +7,72 @@ html(lang='ru')
     .wrapper
       +header(3)
 
-      //.rect_1024
       .base
         .main_content
           +hero_block()
 
           .section_inner
-            .block_caption.mt_20 закупки
+            .block_caption.mt_20 Дилерам
 
             .block_tip Перечень ежемесячно закупаемых товаров:
 
-            p Мы - крупная динамично развивающаяся российская компания, которая вот уже 20 лет работает на рынке HoReCa. Основное направление деятельности — это комплексное оснащение и открытие под ключ предприятий общественного питания и пищевых производств. А также продажа профессионального кухонного оборудования, посуды, инвентаря и мебели, для ресторанов, кафе и баров. Мы всегда открыты для рассмотрения новых бизнес-партнёрств. Если вы хотите стать Дилером нашей компании, мы будем рады взаимовыгодному сотрудничеству.
+            .dealers_info Мы - крупная динамично развивающаяся российская компания, которая вот уже 20 лет работает на рынке HoReCa. Основное направление деятельности — это комплексное оснащение и открытие под ключ предприятий общественного питания и пищевых производств. А также продажа профессионального кухонного оборудования, посуды, инвентаря и мебели, для ресторанов, кафе и баров. Мы всегда открыты для рассмотрения новых бизнес-партнёрств. Если вы хотите стать Дилером нашей компании, мы будем рады взаимовыгодному сотрудничеству.
+
+          .dealers_section
+            .section_inner
+              .dealers_form
+                form(action='#')
+                  .form_title Станьте нашим дилером:
+                  .form_row._half_cell
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Ваше имя/Компания')
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Город')
+                  .form_row._half_cell
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Контактный телефон')
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Эл. почта')
+                  .form_row._half_cell
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Сфера работы компании')
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Срок работы компании')
+                  .form_row._half_cell
+                    .form_cell
+                      .input_w.select_v2
+                        select.select2(data-placeholder='Наличие торгового павильона')
+                          option(disabled selected)
+                          option 1
+                          option 2
+                          option 3
+                    .form_cell
+                      .input_w.select_v2
+                        select.select2(data-placeholder='Наличие склада')
+                          option(disabled selected)
+                          option 1
+                          option 2
+                          option 3
+                          option 4
+
+                  .form_row
+                    .form_cell
+                      .input_w
+                        textarea.input_v2(placeholder='Комментарий')
+
+                  .form_row._half_cell
+                    .form_cell._fr
+                      button.btn_v2.orange_btn.trade_btn
+                        span отправить
 
           .section_inner
             .block_caption.text_center Клиенты о нас
-
           .reviews_block
             .section_inner
               .review_slider
@@ -53,7 +104,7 @@ html(lang='ru')
 
             .contacts_block
               .block_caption.text_center &nbsp;
-              .contacts_form
+              .subscribe_form
                 form(action='#')
                   .contacts_tip Хотите вовремя получать информамацию о&nbsp;скидках и спецпредложениях?
 
@@ -72,4 +123,4 @@ html(lang='ru')
 
       +footer()
 
-    +scripts(true)
+    +scripts()

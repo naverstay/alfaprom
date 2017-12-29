@@ -1,0 +1,73 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('Альфапром Контакты')
+
+  body
+    .wrapper
+      +header(7)
+
+      .base
+        .main_content
+          +hero_block()
+
+          .tabContainer.tab_container(data-event='updateMap')
+            .section_inner
+              .block_caption Контакты
+
+              ul.map_controls.tabControls
+                li.map_unit
+                  a.map_link(href='#tab_1' data-office=1): span Москва
+                li.map_unit
+                  a.map_link(href='#tab_2' data-office=2): span Самара
+                li.map_unit
+                  a.map_link(href='#tab_3' data-office=3): span Тольятти
+                li.map_unit
+                  a.map_link(href='#tab_4' data-office=4): span Сызрань
+
+            .map_section
+              #contacts_map.map_block
+              .map_data
+                #tab_1.office_tab: .office_unit
+                  +office(1)
+
+                #tab_2.office_tab: .office_unit
+                  +office(2)
+
+                #tab_3.office_tab: .office_unit
+                  +office(3)
+
+                #tab_4.office_tab: .office_unit
+                  +office(4)
+
+          .contacts_section
+            .section_inner
+              .contacts_caption Напишите нам:
+
+              .contacts_form
+                form(action='#')
+                  .form_row._third_cell
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Ваше имя/Компания')
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Эл. почта')
+                    .form_cell
+                      .input_w
+                        input.input_v2(placeholder='Контактный телефон')
+
+                  .form_row
+                    .form_cell
+                      .input_w
+                        textarea.input_v2(placeholder='Текст сообщения')
+
+                  .form_row._third_cell
+                    .form_cell._fr
+                      button.btn_v2.orange_btn.trade_btn
+                        span отправить
+
+
+      +footer()
+
+    +scripts(true)

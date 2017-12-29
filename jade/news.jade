@@ -7,7 +7,6 @@ html(lang='ru')
     .wrapper
       +header()
 
-      //.rect_1024
       .base
         .main_content
           +hero_block(true)
@@ -20,10 +19,10 @@ html(lang='ru')
                 .news_unit
                   .news_unit_date 24 ноября 2017г.
                   h2.news_title
-                    a.news_link(href='#')
+                    a.news_link(href='news_1.html')
                       span В Сочи открылся фестиваль Дениса Мацуева «Crescendo»
 
-                  .news_picture
+                  a.news_picture(href='news_1.html')
                     img(src='i/news/conference.jpg')
 
                   p Фестиваль Дениса Мацуева Crescendo для молодых музыкантов открывается во вторник в Сочи, пишет РИА "Новости" со ссылкой на сообщение Сочинского концертно-филармонического объединения. Мацуев выступает арт-директором фестиваля, который три дня будет идти в Зимнем театре.
@@ -31,10 +30,10 @@ html(lang='ru')
                 .news_unit
                   .news_unit_date 24 ноября 2017г.
                   h2.news_title
-                    a.news_link(href='#')
+                    a.news_link(href='news_1.html')
                       span В Красноярске пройдет Международный фестиваль «МузЭнергоТур»
 
-                  .news_picture
+                  a.news_picture(href='news_1.html')
                     img(src='i/news/fest.jpg')
 
                   p 13 июля в Барнаул во второй раз приехал гастролирующий Международный фестиваль "Музэнерготур – 2015". Несколько десятков музыкантов из Европы, Америки и России более 4 часов знакомили барнаульцев с самыми свежими течениями в современной музыкальной импровизации.<br>29 июля в красноярский "Гранд Холл Сибирь" после двухмесячного автобусного путешествия приедет "МузЭнергоТур" - уникальный фестиваль-гастролёр.
@@ -43,7 +42,7 @@ html(lang='ru')
                 .news_unit
                   .news_unit_date 24 ноября 2017г.
                   h2.news_title
-                    a.news_link(href='#')
+                    a.news_link(href='news_1.html')
                       span В Красноярске пройдет Международный фестиваль «МузЭнергоТур»
 
                   p В Одессе открыли памятный знак о присвоении Потемкинской лестнице статуса "Сокровище европейской кинокультуры". Церемония состоялась на Приморском бульваре, у подножия памятника Дюку де Ришелье, в рамках проходящего в городе Одесского международного кинофестиваля (ОМКФ).
@@ -65,28 +64,28 @@ html(lang='ru')
                     a.news_img(href='#')
                       img.bsOnLoad(src='i/stock_1.png')
                     .news_date 20 июля
-                    a.news_link(href='#'): span Продляем акцию на&nbsp;POLAIR
+                    a.news_link(href='news_1.html'): span Продляем акцию на&nbsp;POLAIR
                     .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
                 li
                   .news_box._spec
                     a.news_img(href='#')
                       img.bsOnLoad(src='i/stock_2.png')
                     .news_date 20 июля
-                    a.news_link(href='#'): span Спецпредложение на&nbsp;термосы
+                    a.news_link(href='news_1.html'): span Спецпредложение на&nbsp;термосы
                     .news_overview Дополнительная скидка 15%
                 li
                   .news_box._spec
                     a.news_img(href='#')
                       img.bsOnLoad(src='i/stock_3.png')
                     .news_date 20 июля
-                    a.news_link(href='#'): span Специальная акция на категории товаров
+                    a.news_link(href='news_1.html'): span Специальная акция на категории товаров
                     .news_overview Скидки до 50%
                 li
                   .news_box._spec
                     a.news_img(href='#')
                       img.bsOnLoad(src='i/stock_4.png')
                     .news_date 20 июля
-                    a.news_link(href='#'): span Продляем акцию на&nbsp;POLAIR
+                    a.news_link(href='news_1.html'): span Продляем акцию на&nbsp;POLAIR
                     .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
 
 
@@ -124,7 +123,7 @@ html(lang='ru')
 
             .contacts_block
               .block_caption.text_center &nbsp;
-              .contacts_form
+              .subscribe_form
                 form(action='#')
                   .contacts_tip Хотите вовремя получать информамацию о&nbsp;скидках и спецпредложениях?
 
@@ -143,4 +142,4 @@ html(lang='ru')
 
       +footer()
 
-    +scripts(true)
+    +scripts()

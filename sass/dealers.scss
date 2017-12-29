@@ -1,0 +1,478 @@
+.dealers_section {
+  background: url(../i/dealers_bg.jpg) repeat 50% 50%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    right: -50px;
+    left: -50px;
+    height: 50px;
+    z-index: 1;
+  }
+
+  &:before {
+    top: -50px;
+    box-shadow: 0 10px 100px rgba(252, 127, 0, .35);
+  }
+
+  &:after {
+    bottom: -50px;
+    box-shadow: 0 -10px 100px rgba(252, 127, 0, .35);
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-bottom: 40px;
+  }
+}
+
+.dealers_info {
+  line-height: 1.75;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.trade_form_holder {
+  padding: 20px;
+  margin-bottom: 40px;
+  background: url(../i/form_bg.png) repeat 50% 50%;
+
+  @include respond-to-min($resp_step_1) {
+
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding: 32px;
+    margin-bottom: 58px;
+  }
+}
+
+.trade_form {
+  padding: 24px 18px 1px;
+  background: #fff;
+
+  .input_v2 {
+    font-size: 16px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding: 24px 28px 1px;
+  }
+}
+
+.form_title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  letter-spacing: .028em;
+
+  @include respond-to-min($resp_step_2) {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.form_row {
+  @extend %clearfix;
+
+  &._half_cell {
+    margin-left: -43px;
+
+    .form_cell {
+      padding-left: 43px;
+
+      @include respond-to-min($resp_step_1) {
+        float: left;
+        width: 50%;
+
+        &._fr {
+          float: right;
+        }
+      }
+    }
+  }
+
+  &._third_cell {
+    margin-left: -32px;
+
+    @include respond-to-min($resp_step_2) {
+      margin-right: -1%;
+    }
+
+    .form_cell {
+      padding-left: 32px;
+
+      @include respond-to-min($resp_step_2) {
+        float: left;
+        width: 33%;
+
+        &._fr {
+          float: right;
+          margin-right: 1%;
+        }
+      }
+    }
+  }
+}
+
+.form_cell {
+
+  .dealers_form &,
+  .trade_form & {
+    margin-bottom: 17px;
+
+    @include respond-to-min($resp_step_2) {
+      margin-bottom: 27px;
+    }
+  }
+}
+
+.dealers_form {
+  padding: 20px 20px 1px;
+
+  .input_v2 {
+    font-size: 16px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    padding: 40px 60px 20px;
+  }
+}
+
+.map_section {
+  position: relative;
+  background: url(../i/form_bg.png) repeat 50% 50%;
+
+  @include respond-to-min($resp_step_1) {
+    padding-bottom: 30px;
+  }
+
+  .office_unit {
+
+    @include respond-to-min($resp_step_1) {
+      width: 0;
+      height: 450px;
+      white-space: nowrap;
+
+      &:after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        height: 100%;
+      }
+    }
+
+    @include respond-to-min($resp_step_2) {
+      height: 550px;
+    }
+  }
+}
+
+.map_data {
+  background: #fff;
+  padding-top: 15px;
+
+  @include respond-to-min($resp_step_1) {
+    background: none;
+    padding-top: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    .section_inner {
+      height: 0;
+    }
+  }
+}
+
+.office_tab {
+  //height: 100%;
+  width: 100%;
+  max-width: 910px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.mail_link {
+  color: #ff8100;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.office_box {
+  white-space: normal;
+  width: 295px;
+  pointer-events: all;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+  position: relative;
+
+  &:after {
+    bottom: 70px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid #fff;
+  }
+
+  &:before {
+    margin-left: 2px;
+    bottom: 70px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 20px solid rgba(0, 0, 0, 0.1);
+  }
+
+  @include respond-to-min($resp_step_1) {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+
+    &:after,
+    &:before {
+      content: '';
+      position: absolute;
+      left: 100%;
+    }
+  }
+}
+
+.office_info {
+
+  dt {
+    position: relative;
+    font-weight: 600;
+    padding-left: 38px;
+    margin-bottom: 5px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      top: 0;
+      left: 0;
+    }
+
+    &._address {
+      &:before {
+        background: url(../i/pin_o.png) no-repeat 50% 50%;
+      }
+    }
+
+    &._phone {
+      &:before {
+        background: url(../i/phone_o.png) no-repeat 50% 50%;
+      }
+    }
+
+    &._mail {
+      &:before {
+        background: url(../i/mail_o.png) no-repeat 50% 50%;
+      }
+    }
+  }
+
+  dd {
+    padding-left: 38px;
+    margin-bottom: 40px;
+
+    &:last-child {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.map_block {
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+  height: 480px;
+
+  @include respond-to-min($resp_step_1) {
+    margin-bottom: 0;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    height: 580px;
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    right: -50px;
+    left: -50px;
+    height: 50px;
+    z-index: 1;
+  }
+
+  &:before {
+    top: -50px;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, .4);
+  }
+
+  &:after {
+    bottom: -50px;
+    box-shadow: 0 -10px 50px rgba(0, 0, 0, .4);
+  }
+}
+
+.contacts_form {
+
+  .form_cell {
+    margin-bottom: 28px;
+  }
+
+  @include respond-to-min($resp_step_2) {
+    margin-bottom: 60px;
+  }
+}
+
+.map_controls {
+  text-align: center;
+  font-size: 0;
+  position: relative;
+  z-index: 1;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 27px;
+  }
+}
+
+.map_link {
+  display: block;
+  position: relative;
+  padding: 5px 14px 15px;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+
+  &:before {
+    @include transition_all(opacity .3s .3s);
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -3px;
+    left: -3px;
+    height: 7px;
+    opacity: 0;
+    background: #000;
+  }
+
+  &:after {
+    @include transition_all(border-width .3s);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-left: -11px;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-top: 0 solid #000;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    &:after,
+    span:before {
+      content: '';
+    }
+  }
+
+  span {
+    @include transition_all(border-bottom .3s);
+    display: block;
+    border-bottom: 1px dashed #000;
+
+    &:before {
+      @include transition_all(border-width .3s);
+      z-index: 1;
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      margin-top: -7px;
+      margin-left: -9px;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 0 solid #fff;
+    }
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+
+    span {
+      border-bottom-color: transparent;
+    }
+  }
+
+  &.active {
+
+    &:before {
+      @include transition_all(opacity .3s);
+      opacity: 1;
+    }
+
+    &:after {
+      border-top: 10px solid #000;
+    }
+
+    span {
+      border-bottom-color: transparent;
+
+      &:before {
+        border-top: 7px solid #fff;
+      }
+    }
+  }
+}
+
+.contacts_section {
+
+}
+
+.video_holder {
+  margin: 30px auto 10px;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: 56.66%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.video_name {
+  text-align: center;
+  font-style: italic;
+  font-weight: 400;
+  color: #ff8100;
+  margin-bottom: 30px;
+
+  @include respond-to-min($resp_step_2) {
+    margin-bottom: 50px;
+  }
+}

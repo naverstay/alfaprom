@@ -46,7 +46,7 @@ mixin header(active)
           a.header_phone(href='tel:88002002923') 8 (800) 200-29-23
 
         .logo_block
-          a.logo(href='#')
+          a.logo(href='index.html')
             span.logo_img: img(src='i/logo_o.png')
             span.logo_text.mob_hidden
               span.logo_name Альфапром
@@ -112,19 +112,20 @@ mixin hero_block(unreg)
 
             .cart_cell
               ul.cart_menu
-                - if (unreg)
+                - if (unreg) {
                   li._auth
                     a.cart_link(href='#') Вход/Регистрация
                     p
                       span.clr_orange *
                       span Зарегистрируйся и&nbsp;накапливай скидку!
-                - else
+                - } else {
                   li._lk
                     a.cart_link(href='#') Личный кабинет
                   li._lk
                     a.cart_link(href='#') Скидка клиента
                 li._delivery
                   a.cart_link(href='#') Доставка и оплата
+                - }
 
       .hero_block
         .heroSlider
@@ -138,6 +139,23 @@ mixin hero_block(unreg)
                   a.btn_v2.orange_btn.hero_btn(href='#')
                     span оформить заказ
           .hero_controls.heroControls
+
+mixin office(ind)
+  .office_box
+    dl.office_info
+      dt._address
+        | Адрес:
+        = ind > 1 ? ' ' + ind : ''
+      dd г.Самара, Московское шоссе,<br>55
+
+      dt._phone Телефоны:
+      dd
+        p 8 (800) 200-29-23
+        p +7 (846) 205-22-50
+
+      dt._mail Эл. почта:
+      dd
+        a.mail_link(href='mailto:info-samara@aprom.ru') info-samara@aprom.ru
 
 mixin filters()
   .filter_col
@@ -368,7 +386,7 @@ mixin footer()
         ul.nav_top
           li.nav_item._location
             .dm
-              a.nav_link(href='#') г. Самара, Московское шоссе 55
+              a.nav_link(href='#') г. Самара, Московское шоссе&nbsp;55
 
       .footer_info
         .footer_col._right
@@ -383,18 +401,16 @@ mixin footer()
         .footer_col._wide
           .copyright Все права защищены.<br>Использование материалов с сайта<br>разрешено только с согласия правообладателя.
 
-mixin scripts(index, contacts)
+mixin scripts(contacts)
   link(rel='stylesheet', href='styles/main_global.css', media='all')
-  link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700,800|PT+Sans', rel='stylesheet', type='text/css')
+  link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800|PT+Sans', rel='stylesheet', type='text/css')
   script(src='js/jquery1.10.js')
   script(src='js/jquery.easytabs.min.js')
   script(src='js/jquery.backstretch.min.js')
   script(src='js/select2.js')
   script(src='js/slick.js')
   script(src='js/script.js')
-  - if (index)
-    script(src='js/index.js')
   - if (contacts)
     script(src='js/contacts.js')
-    script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true')
+    script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyCl7THpWflv0u70jhfuU4T6KbuNy0fuxME&callback=loadMap')
 

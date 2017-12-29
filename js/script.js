@@ -1,4 +1,6 @@
-var heroSlider, html;
+var heroSlider, html,
+  reviewSlider, certificatesSlider;
+
 
 $(function ($) {
   html = $('html');
@@ -6,6 +8,10 @@ $(function ($) {
   initSelect();
 
   initHeroSlider();
+
+  initReviewSlider();
+
+  initCertificatesSlider();
 
   initTabs();
 
@@ -92,13 +98,98 @@ function plural(n, str1, str2, str5) {
 }
 
 
+function initReviewSlider() {
+
+  if ($('.reviewSlider').length) {
+
+    reviewSlider = $('.reviewSlider').on('init', function (event, slick, direction) {
+
+    }).slick({
+      //variableWidth: true,
+      dots: true,
+      mobileFirst: true,
+      infinite: true,
+      arrows: true,
+      swipe: true,
+      accessibility: false,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      //centerMode: true,
+      //variableWidth: true,
+      speed: 600,
+      zIndex: 1,
+      initialSlide: 0,
+      //asNavFor: '.activeTabSlider, .productOptionSlider',
+      //centerPadding: '0',
+      slide: '.reviewSlider .review_slide',
+      appendArrows: '.reviewControls',
+      appendDots: '.reviewControls',
+      //prevArrow: '.serviceSlider .slide_prev',
+      //nextArrow: '.serviceSlider .slide_next',
+
+      //variableWidth: true,
+      slidesToShow: 1,
+      touchThreshold: 10
+    });
+  }
+
+}
+
+function initCertificatesSlider() {
+
+  if ($('.certificatesSlider').length) {
+    certificatesSlider = $('.certificatesSlider').on('init', function (event, slick, direction) {
+
+    }).slick({
+      //variableWidth: true,
+      dots: true,
+      mobileFirst: true,
+      infinite: true,
+      arrows: true,
+      swipe: true,
+      accessibility: false,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      //centerMode: true,
+      //variableWidth: true,
+      speed: 600,
+      zIndex: 1,
+      initialSlide: 0,
+      //asNavFor: '.activeTabSlider, .productOptionSlider',
+      //centerPadding: '0',
+      slide: '.certificatesSlider .certificates_slide',
+      appendArrows: '.certificatesControls',
+      appendDots: '.certificatesControls',
+      //prevArrow: '.serviceSlider .slide_prev',
+      //nextArrow: '.serviceSlider .slide_next',
+
+      //variableWidth: true,
+      slidesToShow: 1,
+      touchThreshold: 10,
+      responsive: [
+        {
+          breakpoint: 1600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  }
+
+}
+
 function initTabs() {
 
   $('.tabContainer').each(function (ind) {
     var tabs = $(this);
 
     tabs.bind('easytabs:before', function (event, link, panel) {
-      var func = $(this).attr('data-mob-event');
+      var func = $(this).attr('data-event');
 
       if (func && func in window) {
         window[func](event, link, panel, $(this));
@@ -112,40 +203,42 @@ function initTabs() {
 
 function initHeroSlider() {
 
-  heroSlider = $('.heroSlider').on('init', function (event, slick, direction) {
+  if ($('.heroSlider').length) {
+    heroSlider = $('.heroSlider').on('init', function (event, slick, direction) {
 
-    slick.$slider.find('.bsImg').each(function () {
-      var img = $(this);
-      img.parent().backstretch(img.attr('src'));
+      slick.$slider.find('.bsImg').each(function () {
+        var img = $(this);
+        img.parent().backstretch(img.attr('src'));
+      });
+
+    }).slick({
+      //variableWidth: true,
+      dots: true,
+      mobileFirst: true,
+      infinite: true,
+      arrows: true,
+      swipe: true,
+      accessibility: false,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      //centerMode: true,
+      //variableWidth: true,
+      speed: 600,
+      zIndex: 1,
+      initialSlide: 0,
+      //asNavFor: '.activeTabSlider, .productOptionSlider',
+      //centerPadding: '0',
+      slide: '.heroSlider .hero_slide',
+      appendArrows: '.heroControls',
+      appendDots: '.heroControls',
+      //prevArrow: '.serviceSlider .slide_prev',
+      //nextArrow: '.serviceSlider .slide_next',
+
+      //variableWidth: true,
+      slidesToShow: 1,
+      touchThreshold: 10
     });
-
-  }).slick({
-    //variableWidth: true,
-    dots: true,
-    mobileFirst: true,
-    infinite: true,
-    arrows: true,
-    swipe: true,
-    accessibility: false,
-    autoplay: false,
-    autoplaySpeed: 3000,
-    //centerMode: true,
-    //variableWidth: true,
-    speed: 600,
-    zIndex: 1,
-    initialSlide: 0,
-    //asNavFor: '.activeTabSlider, .productOptionSlider',
-    //centerPadding: '0',
-    slide: '.heroSlider .hero_slide',
-    appendArrows: '.heroControls',
-    appendDots: '.heroControls',
-    //prevArrow: '.serviceSlider .slide_prev',
-    //nextArrow: '.serviceSlider .slide_next',
-
-    //variableWidth: true,
-    slidesToShow: 1,
-    touchThreshold: 10
-  });
+  }
 
 }
 
