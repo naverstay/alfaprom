@@ -1,0 +1,151 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('Альфапром Вакансии')
+
+  body
+    .wrapper
+      +header(6)
+
+      .base
+        .main_content
+          +hero_block(true)
+
+          .section_inner
+            .block_caption.mt_20 Вакансии
+            .vacancy_block.collapseHolder
+              .vacancy_name.collapseBtn Слесарь по ремонту оборудования
+              .vacancy_info.collapseBlock
+                .vacancy_feature Обязанности:
+                ul.trade_list
+                  li Ремонт и ТО упаковочного оборудования.
+
+                .vacancy_feature Требования:
+                ul.trade_list
+                  li Мужчина, от 23 до 45 лет, образование среднее специальное, опыт работы слесарем от 2-х лет.
+
+                .vacancy_feature Условия:
+                ul.trade_list
+                  li Оформление по ТК РФ, график работы сменный, с 8 до 17, социальный пакет.
+
+                .vacancy_feature Тип занятости
+                ul.trade_list
+                  li Полная, рабочий день.
+            .vacancy_block.collapseHolder
+              .vacancy_name.collapseBtn Инженер-электрик
+              .vacancy_info.collapseBlock
+                .vacancy_feature Обязанности:
+                ul.trade_list
+                  li Ремонт и ТО упаковочного оборудования.
+
+                .vacancy_feature Требования:
+                ul.trade_list
+                  li Мужчина, от 23 до 45 лет, образование среднее специальное, опыт работы слесарем от 2-х лет.
+
+                .vacancy_feature Условия:
+                ul.trade_list
+                  li Оформление по ТК РФ, график работы сменный, с 8 до 17, социальный пакет.
+
+                .vacancy_feature Тип занятости
+                ul.trade_list
+                  li Полная, рабочий день.
+            .vacancy_block.collapseHolder
+              .vacancy_name.collapseBtn Менеджер по продажам оборудования
+              .vacancy_info.collapseBlock
+                .vacancy_feature Обязанности:
+                ul.trade_list
+                  li Ремонт и ТО упаковочного оборудования.
+
+                .vacancy_feature Требования:
+                ul.trade_list
+                  li Мужчина, от 23 до 45 лет, образование среднее специальное, опыт работы слесарем от 2-х лет.
+
+                .vacancy_feature Условия:
+                ul.trade_list
+                  li Оформление по ТК РФ, график работы сменный, с 8 до 17, социальный пакет.
+
+                .vacancy_feature Тип занятости
+                ul.trade_list
+                  li Полная, рабочий день.
+
+            .cv_block
+              .cv_form
+                .form_title Отправьте нам резюме:
+                form(action='#')
+                  .form_row._quarter_cell
+                    .form_cell._wide
+                      .input_w._upload
+                        label.input_label(for='cv_file') Загрузить файл
+                        input#cv_file.hide(type='file')
+                        input.input_v2(placeholder='(допустимые форматы: .pdf, .txt, .jpeg, .png)')
+                    .form_cell._fr
+                      button.btn_v2.orange_btn.cv_btn
+                        span отправить
+
+          .section_inner
+            .news_block
+              .block_caption._line новости компании
+              ul.news_list
+                li
+                  .news_box
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/news_1.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span У нас появился TRADE-IN
+                    .news_overview Мы поможем обновится вашему бизнесу и примем старое оборудование в зачет цены нового.
+                li
+                  .news_box
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/news_2.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Оставляйте отзывы на нашем сайте!
+                    .news_overview На нашем сайте заработал раздел "Отзывы".
+                li
+                  .news_box
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/news_3.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Будущее сегодня. Саммит FUTURE TODAY.
+                    .news_overview 07 октября 2015 г. в Москве в Октябрь Event Hall уже во второй раз прошел Саммит лидеров отрасли.
+                li
+                  .news_box
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/news_4.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Продляем акцию на&nbsp;POLAIR
+                    .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
+
+          .section_inner.clearfix
+            .certificates_block
+              .block_caption.text_center Наши сертификаты
+              .certificatesSlider
+                +loop_while(2)
+                  .certificates_slide
+                    img(src='i/certificate_1.png')
+                  .certificates_slide
+                    img(src='i/certificate_2.png')
+
+                .certificates_controls.certificatesControls
+
+            .contacts_block
+              .block_caption.text_center &nbsp;
+              .subscribe_form
+                form(action='#')
+                  .contacts_tip Хотите вовремя получать информамацию о&nbsp;скидках и спецпредложениях?
+
+                  .form_cell
+                    .input_w
+                      input.input_v2(placeholder='Ваше имя')
+                  .form_cell
+                    .input_w
+                      input.input_v2(placeholder='Эл. почта')
+
+                  a.subscribe_link(href='#') За подписку вы получите 500.00 рублей в подарок!
+
+                  .text_center.form_cell
+                    button.btn_v2.orange_btn.subscribe_btn
+                      span Подписаться
+
+      +footer()
+
+    +scripts()

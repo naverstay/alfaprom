@@ -1,5 +1,5 @@
 var heroSlider, html,
-  reviewSlider, certificatesSlider;
+  articleThumbSlider, articleSlider, reviewSlider, certificatesSlider;
 
 
 $(function ($) {
@@ -9,6 +9,8 @@ $(function ($) {
 
   initHeroSlider();
 
+  initArticleSlider();
+
   initReviewSlider();
 
   initCertificatesSlider();
@@ -17,7 +19,11 @@ $(function ($) {
 
   browserCheck();
 
-  $('body').delegate('.openMobMenu', 'click', function () {
+  $('body').delegate('.collapseBtn', 'click', function () {
+    $(this).closest('.collapseHolder').toggleClass('_opened').find('.collapseBlock').slideToggle();
+
+    return false;
+  }).delegate('.openMobMenu', 'click', function () {
     if (html.hasClass('_menu_opened')) {
       html.removeClass('_menu_opened').css('margin-right', '');
     } else {
@@ -97,6 +103,77 @@ function plural(n, str1, str2, str5) {
   return n + ' ' + ((((n % 10) === 1) && ((n % 100) !== 11)) ? (str1) : (((((n % 10) >= 2) && ((n % 10) <= 4)) && (((n % 100) < 10) || ((n % 100) >= 20))) ? (str2) : (str5)))
 }
 
+function initArticleSlider() {
+
+  if ($('.articleSlider').length && $('.articleThumbSlider').length) {
+
+    articleSlider = $('.articleSlider').on('init', function (event, slick, direction) {
+
+    }).slick({
+      //variableWidth: true,
+      dots: false,
+      mobileFirst: true,
+      infinite: true,
+      arrows: true,
+      swipe: true,
+      accessibility: false,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      //centerMode: true,
+      //variableWidth: true,
+      speed: 600,
+      zIndex: 1,
+      initialSlide: 0,
+      //asNavFor: '.activeTabSlider, .productOptionSlider',
+      //centerPadding: '0',
+      slide: '.articleSlider .article_slide',
+      appendArrows: '.articleControls',
+      appendDots: '.articleControls',
+      asNavFor: '.articleThumbSlider',
+      //prevArrow: '.serviceSlider .slide_prev',
+      //nextArrow: '.serviceSlider .slide_next',
+
+      //variableWidth: true,
+      slidesToShow: 1,
+      touchThreshold: 10
+    });
+
+    articleThumbSlider = $('.articleThumbSlider').on('init', function (event, slick, direction) {
+
+    }).slick({
+      //variableWidth: true,
+      dots: false,
+      mobileFirst: true,
+      infinite: true,
+      arrows: false,
+      swipe: true,
+      variableWidth: true,
+      accessibility: false,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      //centerMode: true,
+      //variableWidth: true,
+      speed: 600,
+      zIndex: 1,
+      initialSlide: 0,
+      //asNavFor: '.activeTabSlider, .productOptionSlider',
+      //centerPadding: '0',
+      slide: '.articleThumbSlider .article_thumb_slide',
+      //appendArrows: '.articleControls',
+      //appendDots: '.articleControls',
+      asNavFor: '.articleSlider',
+      //prevArrow: '.serviceSlider .slide_prev',
+      //nextArrow: '.serviceSlider .slide_next',
+
+      //variableWidth: true,
+      slidesToShow: 1,
+      touchThreshold: 10
+    });
+
+
+  }
+
+}
 
 function initReviewSlider() {
 

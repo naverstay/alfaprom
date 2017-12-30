@@ -10,9 +10,26 @@ module.exports = function (grunt) {
       },
       styles: {
         files: ['sass/*.scss'],
-        tasks: ['sass'],
+        tasks: ['wellington'],
         options: {
           spawn: false
+        }
+      }
+    },
+    wellington: {
+      your_target: {
+        src: [
+          'sass/main_global.scss'
+          //'sass/**/*.scss'
+        ],
+        options: {
+          //debug: true,
+          p: 'sass',
+          b: 'styles',
+          s: 'compressed',
+          d: 'i/src',
+          gen: 'i/dist',
+          font: 'fonts'
         }
       }
     },
@@ -20,10 +37,33 @@ module.exports = function (grunt) {
       dist: {
         options: {
           style: 'expanded',
-          sourcemap: 'none'
+          compress: false,
+          yuicompress: false,
+          sourcemap: false
         },
         files: {
           'styles/main_global.css': 'sass/main_global.scss'
+        }
+      }
+    },
+    uglify: {
+      all: {
+        options: {
+          compress: {
+            drop_console: true
+          },
+          sourceMap: false,
+          mangle: false
+        },
+        files: {
+          'js/main.min.js': [
+            'js/jquery1.10.js',
+            'js/jquery.easytabs.min.js',
+            'js/jquery.backstretch.min.js',
+            'js/select2.js',
+            'js/slick.js',
+            'js/script.js'
+          ]
         }
       }
     },
@@ -86,5 +126,7 @@ module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
 
+  grunt.loadNpmTasks('grunt-wellington');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', ['watch']);
 };

@@ -42,6 +42,18 @@
     }
   }
 
+  &.cv_btn {
+    display: block;
+    width: 100%;
+    padding: 16px 25px 12px;
+    font: bold 16px/17px $PTSans;
+    text-transform: uppercase;
+
+    @include respond-to-min($resp_step_1) {
+      padding: 16px 10px 12px;
+    }
+  }
+
   &.hero_btn {
     display: inline-block;
     vertical-align: middle;
@@ -82,9 +94,4 @@
 
 .green_btn {
   color: #fff;
-}
-
-.btn_red {
-  color: #fff;
-  background: #f46b65;
 }

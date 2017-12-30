@@ -319,6 +319,24 @@ $rectWidth: $content-max-w;
   margin-top: 30px;
 }
 
+// **********  text
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+}
+
+.text_left {
+  text-align: left;
+}
+
+.text_upper {
+  text-transform: uppercase;
+}
+
 .clr_white {
   color: #fff;
 }

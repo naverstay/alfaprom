@@ -1,5 +1,28 @@
 .input_w {
   position: relative;
+
+  &._upload {
+
+    .input_v2 {
+      padding-left: 122px;
+    }
+
+    .input_label {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+    }
+  }
+}
+
+.input_label {
+  cursor: pointer;
+  font: 16px $PTSans;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .input_v1 {
