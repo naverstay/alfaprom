@@ -17,7 +17,7 @@ module.exports = function (grunt) {
       }
     },
     wellington: {
-      your_target: {
+      styles: {
         src: [
           'sass/main_global.scss'
           //'sass/**/*.scss'
@@ -63,19 +63,58 @@ module.exports = function (grunt) {
             'js/select2.js',
             'js/slick.js',
             'js/script.js'
+          ],
+          'js/contacts.min.js': [
+            'js/contacts.js'
           ]
         }
+      }
+    },
+    imagemin: {
+      png: {
+        options: {
+          optimizationLevel: 7
+        },
+        files: [
+          {
+            // Set to true to enable the following options…
+            expand: true,
+            // cwd is 'current working directory'
+            cwd: 'i/',
+            src: ['**/*.png'],
+            // Could also match cwd line above. i.e. project-directory/img/
+            dest: 'i_compressed/',
+            ext: '.png'
+          }
+        ]
+      },
+      jpg: {
+        options: {
+          progressive: true
+        },
+        files: [
+          {
+            // Set to true to enable the following options…
+            expand: true,
+            // cwd is 'current working directory'
+            cwd: 'i/',
+            src: ['**/*.jpg'],
+            // Could also match cwd. i.e. project-directory/img/
+            dest: 'i_compressed/',
+            ext: '.jpg'
+          }
+        ]
       }
     },
     pug: {
       compile: {
         options: {
           basedir: 'jade',
-          pretty: true,
+          pretty: false,
           data: {
             client: false,
             debug: true,
-            pretty: true
+            pretty: false
           }
         },
         files: [{
@@ -126,6 +165,8 @@ module.exports = function (grunt) {
 
   require('load-grunt-tasks')(grunt);
 
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-imageoptim');
   grunt.loadNpmTasks('grunt-wellington');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', ['watch']);

@@ -169,10 +169,7 @@ function initArticleSlider() {
       slidesToShow: 1,
       touchThreshold: 10
     });
-
-
   }
-
 }
 
 function initReviewSlider() {
