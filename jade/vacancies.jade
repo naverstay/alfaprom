@@ -12,7 +12,7 @@ html(lang='ru')
           +hero_block(true)
 
           .section_inner
-            .block_caption.mt_20 Вакансии
+            h2.block_caption.mt_20 Вакансии
             .vacancy_block.collapseHolder
               .vacancy_name.collapseBtn Слесарь по ремонту оборудования
               .vacancy_info.collapseBlock
@@ -84,7 +84,7 @@ html(lang='ru')
 
           .section_inner
             .news_block
-              .block_caption._line новости компании
+              h2.block_caption._line новости компании
               ul.news_list
                 li
                   .news_box
@@ -117,7 +117,7 @@ html(lang='ru')
 
           .section_inner.clearfix
             .certificates_block
-              .block_caption.text_center Наши сертификаты
+              h2.block_caption.text_center Наши сертификаты
               .certificatesSlider
                 +loop_while(2)
                   .certificates_slide

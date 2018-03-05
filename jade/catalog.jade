@@ -1,0 +1,246 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('Альфапром каталог')
+
+  body
+    .wrapper
+      +header(1)
+
+      .base
+        .main_content
+          +hero_block(true)
+
+          .section_inner.clearfix
+            h2.block_caption.mt_20 каталог
+
+            +catalog()
+
+            .catalog_holder
+              ul.catalog_sort
+                li
+                  span Сортировать по:
+                li
+                  a.catalog_sort_link._desc(href='#'): span стоимости
+                li
+                  a.catalog_sort_link._asc(href='#'): span популярности
+                li
+                  a.catalog_sort_link(href='#'): span алфавиту
+
+              ul.catalog_list
+                +loop_while(2)
+                  li
+                    .product_block
+                      h3.product_block_title
+                        a.product_name(href='product.html') Пароконвектомат TECNOEKA EVOLUTION EKF 523 UD
+
+                      .product_photo
+                        img(src='i/catalog/prod_1.jpg')
+
+                      .product_controls
+                        .product_price 87 826 Р
+                        p
+                          a.btn_v2.product_btn.orange_btn(href='#')
+                            span В корзину
+
+                        p
+                          a.product_compare_link(href='#'): span Добавить к сравнению
+
+                      dl.product_options
+                        dt: span Габаритные размеры
+                        dd 610х730х660 мм
+
+                        dt: span Тип парообразования
+                        dd инжектор
+
+                        dt: span Вместимость
+                        dd 5 уровней GN 2/3
+
+                        dt: span Размер гастроемкости GN2/3
+                        dd 327х353 мм
+
+                        dt: span Расстояние между уровнями
+                        dd 80 мм
+
+                        dt: span Температурный диапазон
+                        dd 50 °C...275 °C
+
+                        dt
+                          a.product_option_link(href='#')
+                            span Все параметры
+
+                  li
+                    .product_block
+                      h3.product_block_title
+                        a.product_name(href='product.html') Пароконвектомат ABAT ПКА 6-1/3П
+
+                      .product_photo
+                        img(src='i/catalog/prod_2.jpg')
+
+                      .product_controls
+                        .product_price 90 600 Р
+                        p
+                          a.btn_v2.product_btn.orange_btn(href='#')
+                            span В корзину
+
+                        p
+                          a.product_compare_link(href='#'): span Добавить к сравнению
+
+                      dl.product_options
+                        dt: span Габаритные размеры
+                        dd 610х730х660 мм
+
+                        dt: span Тип парообразования
+                        dd инжектор
+
+                        dt: span Вместимость
+                        dd 5 уровней GN 2/3
+
+                        dt: span Размер гастроемкости GN2/3
+                        dd 327х353 мм
+
+                        dt: span Расстояние между уровнями
+                        dd 80 мм
+
+                        dt: span Температурный диапазон
+                        dd 50 °C...275 °C
+
+                        dt
+                          a.product_option_link(href='#')
+                            span Все параметры
+
+                li
+                  .product_block
+                    h3.product_block_title
+                      a.product_name(href='product.html') Пароконвектомат ABAT ПКА 6-1/3П
+
+                    .product_photo
+                      img(src='i/catalog/prod_2.jpg')
+
+                    .product_controls
+                      .product_price 90 600 Р
+                      p
+                        a.btn_v2.product_btn.orange_btn(href='#')
+                          span В корзину
+
+                      p
+                        a.product_compare_link(href='#'): span Добавить к сравнению
+
+                    dl.product_options
+                      dt: span Габаритные размеры
+                      dd 610х730х660 мм
+
+                      dt: span Тип парообразования
+                      dd инжектор
+
+                      dt: span Вместимость
+                      dd 5 уровней GN 2/3
+
+                      dt: span Размер гастроемкости GN2/3
+                      dd 327х353 мм
+
+                      dt: span Расстояние между уровнями
+                      dd 80 мм
+
+                      dt: span Температурный диапазон
+                      dd 50 °C...275 °C
+
+                      dt
+                        a.product_option_link(href='#')
+                          span Все параметры
+
+              .pagination_block._spec
+                ul.pagination_list
+                  li: a.pagination_link(href='#') <<
+                  li._active: span.pagination_link(): span 1
+                  li: a.pagination_link(href='#'): span 2
+                  li: a.pagination_link(href='#'): span 3
+                  li: a.pagination_link(href='#') >>
+
+          .section_inner
+            .news_block._mod_1
+              h2.block_caption._line АКЦИИ И СПЕЦПРЕДЛОЖЕНИЯ
+              ul.news_list
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_1.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Продляем акцию на&nbsp;POLAIR
+                    .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_2.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Спецпредложение на&nbsp;термосы
+                    .news_overview Дополнительная скидка 15%
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_3.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Специальная акция на категории товаров
+                    .news_overview Скидки до 50%
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_4.png')
+                    .news_date 20 июля
+                    a.news_link(href='#'): span Продляем акцию на&nbsp;POLAIR
+                    .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
+
+          .section_inner
+            h2.block_caption.text_center Клиенты о нас
+
+          .reviews_block
+            .section_inner
+              .review_slider
+                .review_slider_corner_left.dt_only
+                .review_slider_corner_right.dt_only
+                .reviewSlider
+                  +loop_while(5)
+                    .review_slide
+                      .review_slide_content
+                        .review_img
+                          img(src='i/client.png')
+                        p “Искренне благодарим коллектив ООО “АльфаПром” за помощь в подборе необходимого оборудования для нашей организации. Было очень приятно ощущать со стороны сотрудников Вашей компании оперативность и грамотное отношение к работе в течение всего периода нашего сотрудничества. <br>                    Хочется особо отметить специалиста Овчинникова Алексея за внимательное отношение к заказчикам и индивидуальный подход к проблеме. Ваш профессионализм и глубокое знание дела позволили сократить сроки подбора и поставки необходимого оборудования.”
+                        .review_info
+                          .review_author Матвеева Е.П.
+                          .review_date ИП Глава КФХ<br>24 марта 2017 г.
+                .review_controls.reviewControls
+
+          .section_inner.clearfix
+            .certificates_block
+              h2.block_caption.text_center Наши сертификаты
+              .certificatesSlider
+                +loop_while(2)
+                  .certificates_slide
+                    img(src='i/certificate_1.png')
+                  .certificates_slide
+                    img(src='i/certificate_2.png')
+
+                .certificates_controls.certificatesControls
+
+            .contacts_block
+              .block_caption.text_center &nbsp;
+              .subscribe_form
+                form(action='#')
+                  .contacts_tip Хотите вовремя получать информамацию о&nbsp;скидках и спецпредложениях?
+
+                  .form_cell
+                    .input_w
+                      input.input_v2(placeholder='Ваше имя')
+                  .form_cell
+                    .input_w
+                      input.input_v2(placeholder='Эл. почта')
+
+                  a.subscribe_link(href='#') За подписку вы получите 500.00 рублей в подарок!
+
+                  .text_center.form_cell
+                    button.btn_v2.orange_btn.subscribe_btn
+                      span Подписаться
+
+      +footer()
+
+    +scripts()

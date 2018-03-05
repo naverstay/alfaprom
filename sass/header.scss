@@ -453,9 +453,11 @@
 
 .main_menu {
   margin-bottom: 42px;
+  padding-left: 12px;
 
   @include respond-to-min($resp_step_2) {
     float: right;
+    padding-left: 0;
   }
 }
 

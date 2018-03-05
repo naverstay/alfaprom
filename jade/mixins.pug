@@ -99,6 +99,92 @@ mixin header(active)
               +menu_link((active === 7 ? '_active' : ''), ref='contacts.html')
                 span.link_text Контакты
 
+mixin catalog()
+  .catalog_filter
+    .catalog_filter_caption Упаковочное оборудование
+    ul.catalog_filter_list
+      li
+        .catalog_filter_caption по категориям
+      li
+        a.catalog_filter_link(href='#')
+          span Термоусадочное оборудование
+
+        ul.catalog_filter_list
+          li
+            a.catalog_filter_link(href='#')
+              span Для штучной упаковки
+          li
+            a.catalog_filter_link(href='#')
+              span Для групповой упаковки
+      li._active
+        a.catalog_filter_link(href='#')
+          span Вакуум-упаковочное оборудование
+      li
+        a.catalog_filter_link(href='#')
+          span Запайщики пакетов
+      li
+        a.catalog_filter_link(href='#')
+          span Конвейерные запайщики
+      li
+        a.catalog_filter_link(href='#')
+          span Датеры
+      li
+        a.catalog_filter_link(href='#')
+          span Горячие столы
+      li
+        a.product_option_link(href='#')
+          span Все категории
+
+      li
+        .catalog_filter_caption по видам предприятий
+      li
+        a.catalog_filter_link(href='#')
+          span Мясопереработка
+      li
+        a.catalog_filter_link(href='#')
+          span Овощепереработка
+      li
+        a.catalog_filter_link(href='#')
+          span Молочная и масложировая промышленность
+      li
+        a.catalog_filter_link(href='#')
+          span Рыбопереработка
+      li
+        a.catalog_filter_link(href='#')
+          span Хлебопекарное оборудование
+      li
+        a.product_option_link(href='#')
+          span Все типы
+      li
+        a.catalog_price_list(href='#')
+          span Прайс-лист на&nbsp;оборудование
+
+    .catalog_filter_caption расходные материалы
+    ul.catalog_filter_list
+      li
+        .catalog_filter_caption по категориям
+      li
+        a.catalog_filter_link(href='#')
+          span Стрейч-пленка ручная
+      li
+        a.catalog_filter_link(href='#')
+          span Клейкая лента упаковочная
+      li
+        a.catalog_filter_link(href='#')
+          span Малярная клейкая лента
+      li
+        a.catalog_filter_link(href='#')
+          span Полиэтиленовая пленка
+      li
+        a.catalog_filter_link(href='#')
+          span Фасовочные пакеты
+      li
+        a.product_option_link(href='#')
+          span Все категории
+      li
+        a.catalog_price_list(href='#')
+          span Прайс-лист на материалы
+
 mixin hero_block(unreg)
   .hero_section
     .section_inner.clearfix
@@ -398,14 +484,15 @@ mixin footer()
             a.logo(href='#')
               span.logo_img: img(src='i/logo_w.png' width=62 height=56)
               span.logo_text
-                span.logo_name ООО «АЛЬФАПАКК»
+                span.logo_name ООО «АЛЬФАПРОМ»
                 span Упаковочные материалы<br>оптом в Самаре
         .footer_col._wide
           .copyright Все права защищены.<br>Использование материалов с сайта<br>разрешено только с согласия правообладателя.
 
-mixin scripts(contacts)
+mixin scripts(contacts, product)
   link(rel='stylesheet', href='styles/main_global.css', media='all')
   link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800|PT+Sans', rel='stylesheet', type='text/css')
+
   - if (prod)
     script(src='js/main.min.js')
   - else
@@ -418,3 +505,7 @@ mixin scripts(contacts)
   - if (contacts)
     script(src='js/contacts' + (prod ? '.min' : '') + '.js')
     script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyCl7THpWflv0u70jhfuU4T6KbuNy0fuxME&callback=loadMap')
+
+  - if (product)
+    link(href='//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css' rel="stylesheet")
+    script(src='//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js')

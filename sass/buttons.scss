@@ -28,6 +28,29 @@
 .btn_v2 {
   height: 45px;
 
+  &.product_btn {
+    text-align: center;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    padding: 16px 25px 12px;
+    font: bold 16px/17px $PTSans;
+    text-transform: uppercase;
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+
+      &.cart_icon {
+        margin: -10px 6px -5px -5px;
+
+        img {
+          display: block;
+        }
+      }
+    }
+  }
+
   &.trade_btn {
     display: block;
     width: 100%;

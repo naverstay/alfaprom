@@ -937,6 +937,13 @@ $hex_border: 3px;
   &._line {
     text-decoration: underline;
   }
+
+  @include respond-to-min($resp_step_2) {
+    &._product {
+      margin-left: 280px;
+      letter-spacing: .028em;
+    }
+  }
 }
 
 .block_tip {
