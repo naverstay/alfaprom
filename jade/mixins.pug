@@ -1,4 +1,5 @@
 - var prod = true;
+//- var prod = false;
 
 mixin dev_head(page_title)
     head
@@ -195,7 +196,7 @@ mixin hero_block(unreg)
           .cart_block
             .cart_cell
               .cart_counter
-                a.cart_link.fz_16(href='#') Корзина
+                a.cart_link.fz_16(href='cart.html') Корзина
                 .cart_counter_val В корзине нет товаров
 
             .cart_cell
@@ -489,7 +490,7 @@ mixin footer()
         .footer_col._wide
           .copyright Все права защищены.<br>Использование материалов с сайта<br>разрешено только с согласия правообладателя.
 
-mixin scripts(contacts, product)
+mixin scripts(contacts, produc, cart)
   link(rel='stylesheet', href='styles/main_global.css', media='all')
   link(href='//fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800|PT+Sans', rel='stylesheet', type='text/css')
 
@@ -501,7 +502,9 @@ mixin scripts(contacts, product)
     script(src='js/jquery.backstretch.min.js')
     script(src='js/select2.js')
     script(src='js/slick.js')
+    script(src='js/jquery.inputmask.bundle.js')
     script(src='js/script.js')
+
   - if (contacts)
     script(src='js/contacts' + (prod ? '.min' : '') + '.js')
     script(src='//maps.googleapis.com/maps/api/js?key=AIzaSyCl7THpWflv0u70jhfuU4T6KbuNy0fuxME&callback=loadMap')

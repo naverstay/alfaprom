@@ -1,0 +1,154 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('Альфапром новости')
+
+  body
+    .wrapper
+      +header()
+
+      .base
+        .main_content
+
+          .section_inner
+            .block_caption.mt_27.mb_0 Личный кабинет
+
+          .tabContainer.tab_container
+            .section_inner
+              ul.tabControls.tab_controls._cart
+                li.tab_unit
+                  a.tab_link(href='#tab_1'): span Корзина
+                li.tab_unit
+                  a.tab_link(href='#tab_2'): span Сравнение товаров
+                li.tab_unit
+                  a.tab_link(href='#tab_3'): span Скидка клиента
+
+            .cart_tabs_holder
+              .cart_box_shadow
+              .section_inner
+                #tab_1.cart_tab
+                  ul.cart_list
+                    li
+                      .product_block
+                        .product_photo
+                          img(src='i/cart/prod_1.jpg')
+
+                        .product_info
+                          h3.product_block_title
+                            a.product_name(href='product.html') Пароконвектомат TECNOEKA EVOLUTION EKF 523 UD
+
+                          ul.product_info_action
+                            li: a.product_compare_link(href='#'): span Добавить к сравнению
+                            li: a.product_compare_link(href='#'): span Удалить
+
+                        .product_controls
+                          .product_count
+                            label.label_v1(for='counter_1') Количество:
+                            .input_w.valCell
+                              input#counter_1.input_v3.text_center(value='1' data-min='1' data-max='1000' data-step='1' data-inputmask="'alias': 'numeric', 'rightAlign': false, 'allowMinus': false, 'allowPlus': false, 'autoGroup': false, 'groupSeparator': '', 'autoUnmask': true, 'digits': 0, 'placeholder': '0', 'digitsOptional': false" )
+                              a.btn_v3.count_btn.valMinus.orange_btn._minus(href='#')
+                              a.btn_v3.count_btn.valPlus.orange_btn._plus(href='#')
+
+                          .product_price 87 826 Р
+
+                    li
+                      .product_block
+                        .product_photo
+                          img(src='i/cart/prod_2.jpg')
+
+                        .product_info
+                          h3.product_block_title
+                            a.product_name(href='product.html') Пароконвектомат ABAT ПКА 6-1/3П
+
+                          ul.product_info_action
+                            li: a.product_compare_link(href='#'): span Добавить к сравнению
+                            li: a.product_compare_link(href='#'): span Удалить
+
+                        .product_controls
+                          .product_count
+                            label.label_v1(for='counter_2') Количество:
+                            .input_w.valCell
+                              input#counter_2.input_v3.text_center(value='1' data-min='1' data-max='1000' data-step='1' data-inputmask="'alias': 'numeric', 'rightAlign': false, 'allowMinus': false, 'allowPlus': false, 'autoGroup': false, 'groupSeparator': '', 'autoUnmask': true, 'digits': 0, 'placeholder': '0', 'digitsOptional': false" )
+                              a.btn_v3.count_btn.valMinus.orange_btn._minus(href='#')
+                              a.btn_v3.count_btn.valPlus.orange_btn._plus(href='#')
+
+                          .product_price 87 826 Р
+
+                    li
+                      .product_block
+                        .product_photo
+                          img(src='i/cart/prod_3.jpg')
+
+                        .product_info
+                          h3.product_block_title
+                            a.product_name(href='product.html') Пароконвектомат UNOX XEVC-0511 E1R
+
+                          ul.product_info_action
+                            li: a.product_compare_link(href='#'): span Добавить к сравнению
+                            li: a.product_compare_link(href='#'): span Удалить
+
+                        .product_controls
+                          .product_count
+                            label.label_v1(for='counter_3') Количество:
+                            .input_w.valCell
+                              input#counter_3.input_v3.text_center(value='1' data-min='1' data-max='1000' data-step='1' data-inputmask="'alias': 'numeric', 'rightAlign': false, 'allowMinus': false, 'allowPlus': false, 'autoGroup': false, 'groupSeparator': '', 'autoUnmask': true, 'digits': 0, 'placeholder': '0', 'digitsOptional': false" )
+                              a.btn_v3.count_btn.valMinus.orange_btn._minus(href='#')
+                              a.btn_v3.count_btn.valPlus.orange_btn._plus(href='#')
+
+                          .product_price 87 826 Р
+
+                  .cart_total
+                    .cart_total_label Итого:
+                    .product_controls
+                      .product_price 367 066 Р
+                      p
+                        a.btn_v2.product_btn.orange_btn(href='#')
+                          span оформить заказ
+
+                      p
+                        a.product_compare_link(href='#'): span Доставка и оплата
+
+                #tab_2.cart_tab
+                  .product_block
+                    p Сравнение товаров
+
+                #tab_3.cart_tab
+                  .product_block
+                    p Скидка клиента
+
+          .section_inner
+            .news_block
+              .block_caption._line АКЦИИ И СПЕЦПРЕДЛОЖЕНИЯ
+              ul.news_list
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_1.png')
+                    .news_date 20 июля
+                    a.news_link(href='news_1.html'): span Продляем акцию на&nbsp;POLAIR
+                    .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_2.png')
+                    .news_date 20 июля
+                    a.news_link(href='news_1.html'): span Спецпредложение на&nbsp;термосы
+                    .news_overview Дополнительная скидка 15%
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_3.png')
+                    .news_date 20 июля
+                    a.news_link(href='news_1.html'): span Специальная акция на категории товаров
+                    .news_overview Скидки до 50%
+                li
+                  .news_box._spec
+                    a.news_img(href='#')
+                      img.bsOnLoad(src='i/stock_4.png')
+                    .news_date 20 июля
+                    a.news_link(href='news_1.html'): span Продляем акцию на&nbsp;POLAIR
+                    .news_overview Снижаем цены на камеры. моноблоки, сплит-системы Polair
+
+      +footer()
+
+    +scripts(false, false, true)

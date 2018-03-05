@@ -105,6 +105,48 @@
   }
 }
 
+.btn_v3 {
+  height: 42px;
+
+  &.count_btn {
+    width: 44px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 4px;
+      top: 50%;
+      left: 50%;
+      margin: -2px 0 0 -7px;
+      background: #000;
+    }
+
+    &._minus {
+      left: 0;
+    }
+
+    &._plus {
+      right: 0;
+
+      &:after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 14px;
+        background: #000;
+        top: 50%;
+        left: 50%;
+        margin: -7px 0 0 -2px;
+      }
+    }
+  }
+}
+
 .orange_btn {
   @include transition_all(background .3s);
   background: #ff8100;

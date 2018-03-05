@@ -464,6 +464,18 @@ $hex_border: 3px;
     float: left;
     padding-left: 62px;
   }
+
+  &._cart {
+
+    @include respond-to-min($resp_step_2) {
+      margin-left: -95px;
+      padding-left: 70px;
+
+      li {
+        padding-left: 95px;
+      }
+    }
+  }
 }
 
 .tab_link {
@@ -551,6 +563,19 @@ $hex_border: 3px;
 
       &:before {
         border-top: 7px solid #fff;
+      }
+    }
+  }
+
+  ._cart & {
+    font-size: 17px;
+    font-weight: 600;
+    text-transform: none;
+
+    @include respond-to-min($resp_step_2) {
+      &:before {
+        right: -12px;
+        left: -12px;
       }
     }
   }

@@ -25,6 +25,14 @@
   }
 }
 
+.label_v1 {
+  color: #666;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 8px;
+  letter-spacing: .02em;
+}
+
 .input_v1 {
   display: block;
   width: 100%;
@@ -48,6 +56,17 @@
   @at-root textarea#{&} {
     height: 153px;
   }
+}
+
+.input_v3 {
+  display: block;
+  width: 100%;
+  padding: 3px;
+  height: 42px;
+  font-size: 20px;
+  text-align: center;
+  background: #fff;
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.45);
 }
 
 .select_v1 {

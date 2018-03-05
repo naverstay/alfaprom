@@ -62,6 +62,7 @@ module.exports = function (grunt) {
             'js/jquery.backstretch.min.js',
             'js/select2.js',
             'js/slick.js',
+            'js/jquery.inputmask.bundle.js',
             'js/script.js'
           ],
           'js/contacts.min.js': [
