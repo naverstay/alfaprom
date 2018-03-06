@@ -100,6 +100,34 @@ mixin header(active)
               +menu_link((active === 7 ? '_active' : ''), ref='contacts.html')
                 span.link_text Контакты
 
+mixin params(price)
+  dl.product_options
+    - if (price)
+      dt: span Цена
+      dd 87 826 Р
+
+    dt: span Габаритные размеры
+    dd 610х730х660 мм
+
+    dt: span Тип парообразования
+    dd инжектор
+
+    dt: span Вместимость
+    dd 5 уровней GN 2/3
+
+    dt: span Размер гастроемкости GN2/3
+    dd 327х353 мм
+
+    dt: span Расстояние между уровнями
+    dd 80 мм
+
+    dt: span Температурный диапазон
+    dd 50 °C...275 °C
+
+    dt._all
+      a.product_option_link(href='#')
+        span Все параметры
+
 mixin catalog()
   .catalog_filter
     .catalog_filter_caption Упаковочное оборудование

@@ -312,6 +312,11 @@
   .cart_list & {
     margin-top: 12px;
   }
+
+  .compare_block & {
+    line-height: 1.3;
+    text-align: center;
+  }
 }
 
 .product_name {
@@ -334,6 +339,13 @@
 
   ._full & {
     margin-bottom: 25px;
+  }
+
+  .compare_list & {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 10px;
+    float: none;
   }
 
   @include respond-to-min($resp_step_1) {
@@ -366,6 +378,16 @@
   padding-top: 5px;
   clear: both;
 
+  .compare_block & {
+    margin-right: 0;
+    padding-top: 20px;
+
+    dt, dd {
+      padding: 11px 16px;
+      margin-top: 0;
+    }
+  }
+
   dt, dd {
     margin-top: 16px;
   }
@@ -389,6 +411,29 @@
         font-weight: 300;
         margin-left: 2px;
         content: '.................................................................................................................................................................................................................................................';
+
+        .compare_block & {
+          display: none;
+        }
+      }
+    }
+
+    .compare_params & {
+      width: 100%;
+      float: none;
+
+      &:nth-child(4n+3) {
+        background: #ffe5cb;
+      }
+
+      &._all {
+        background: none;
+      }
+    }
+
+    .compare_list & {
+      @include respond-to-min($resp_step_1) {
+        display: none;
       }
     }
   }
@@ -403,6 +448,24 @@
 
     ._full & {
       text-align: right;
+    }
+
+    .compare_params & {
+      display: none;
+    }
+
+    .compare_list & {
+
+      @include respond-to-min($resp_step_1) {
+        float: none;
+        display: block;
+        width: 100%;
+        padding-left: 0;
+
+        &:nth-child(4n+4) {
+          background: #ffe5cb;
+        }
+      }
     }
   }
 
@@ -583,6 +646,13 @@
       padding-top: 12px;
     }
   }
+
+  .compare_list & {
+    padding-top: 3px;
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .product_compare_link {
@@ -673,6 +743,26 @@
   }
 }
 
+.compare_box_shadow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100px;
+  overflow: hidden;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    width: 100%;
+    height: 50px;
+    margin-left: -50%;
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+
 .product_count {
   position: relative;
   float: left;
@@ -680,5 +770,44 @@
   .input_w {
     padding: 0 47px;
     width: 144px;
+  }
+}
+
+.compare_block {
+  @extend %clearfix;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.compare_params {
+  width: 270px;
+  float: left;
+  display: none;
+
+  @include respond-to-min($resp_step_1) {
+    display: block;
+  }
+}
+
+.compare_wrapper {
+  overflow-x: auto;
+
+  @include respond-to-min($resp_step_1) {
+    margin-left: 270px;
+  }
+}
+
+.compare_list {
+  white-space: nowrap;
+
+  li {
+    width: 290px;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+  }
+
+  @include respond-to-min($resp_step_1) {
+    text-align: center;
   }
 }

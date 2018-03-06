@@ -21,6 +21,8 @@ $(function ($) {
 
     browserCheck();
 
+    setCompareOffset();
+
     $('body')
         .delegate('.collapseBtn', 'click', function () {
             $(this).closest('.collapseHolder').toggleClass('_opened').find('.collapseBlock').slideToggle();
@@ -64,7 +66,10 @@ $(function ($) {
         var img = $(this);
         img.parent().backstretch(img.attr('src'));
     });
+});
 
+$(window).resize(function () {
+    setCompareOffset();
 });
 
 function initMask(el) {
@@ -95,6 +100,31 @@ function initMask(el) {
             inp.inputmask(JSON.parse('{' + inp.attr('data-inputmask-custom').replace(/'/g, '"') + '}'));
         }
     });
+}
+
+function setCompareOffset() {
+    heightCheck();
+
+    var compareList = $('.compareList:visible');
+    var compareParams = $('.compareParams:visible');
+
+    if (compareParams.length && compareList.length) {
+        compareParams.css('paddingTop', compareList.find('.product_options').first().offset().top - compareList.offset().top);
+    }
+}
+
+function heightCheck() {
+    var maxH = 0, compareList = $('.compareList:visible');
+
+    if (compareList.length) {
+        compareList.find('.product_block_title').css('height', 'auto');
+
+        compareList.find('.product_block_title').each(function (ind) {
+            maxH = Math.max(maxH, $(this).outerHeight());
+        });
+
+        compareList.find('.product_block_title').css('height', maxH);
+    }
 }
 
 function browserCheck() {
@@ -325,6 +355,12 @@ function initTabs() {
             if (func && func in window) {
                 window[func](event, link, panel, $(this));
             }
+        }).bind('easytabs:after', function (event, link, panel) {
+            var func = $(this).attr('data-event-after');
+
+            if (func && func in window) {
+                window[func](event, link, panel, $(this));
+            }
         }).easytabs({
             //animationSpeed: 0,
             tabs: '.tabControls>li'
@@ -370,7 +406,6 @@ function initHeroSlider() {
             touchThreshold: 10
         });
     }
-
 }
 
 function initSelect() {

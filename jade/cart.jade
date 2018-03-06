@@ -13,7 +13,7 @@ html(lang='ru')
           .section_inner
             .block_caption.mt_27.mb_0 Личный кабинет
 
-          .tabContainer.tab_container
+          .tabContainer.tab_container(data-event-after='setCompareOffset')
             .section_inner
               ul.tabControls.tab_controls._cart
                 li.tab_unit
@@ -25,8 +25,8 @@ html(lang='ru')
 
             .cart_tabs_holder
               .cart_box_shadow
-              .section_inner
-                #tab_1.cart_tab
+              #tab_1.cart_tab
+                .section_inner
                   ul.cart_list
                     li
                       .product_block
@@ -108,11 +108,53 @@ html(lang='ru')
                       p
                         a.product_compare_link(href='#'): span Доставка и оплата
 
-                #tab_2.cart_tab
-                  .product_block
-                    p Сравнение товаров
+              #tab_2.cart_tab
+                .compare_box_shadow
+                .section_inner
+                  .compare_block
+                    .compare_params.compareParams
+                      +params(true)
 
-                #tab_3.cart_tab
+                    .compare_wrapper
+                      ul.compare_list.compareList
+                        +loop_while(3)
+                          li
+                            .product_block
+                              .product_photo
+                                img(src='i/comparsion/photo_1.jpg')
+                              h3.product_block_title
+                                a.product_name(href='product.html') Пароконвектомат TECNOEKA EVOLUTION<br>EKF 523 UD
+                              .product_controls
+                                p
+                                  a.btn_v2.product_btn.orange_btn(href='#')
+                                    span В корзину
+                              +params(true)
+
+                          li
+                            .product_block
+                              .product_photo
+                                img(src='i/comparsion/photo_2.jpg')
+                              h3.product_block_title
+                                a.product_name(href='product.html') Пароконвектомат ABAT ПКА 6-1/3П
+                              .product_controls
+                                p
+                                  a.btn_v2.product_btn.orange_btn(href='#')
+                                    span В корзину
+                              +params(true)
+                          li
+                            .product_block
+                              .product_photo
+                                img(src='i/comparsion/photo_3.jpg')
+                              h3.product_block_title
+                                a.product_name(href='product.html') Пароконвектомат UNOX XEVC-0511 E1R
+                              .product_controls
+                                p
+                                  a.btn_v2.product_btn.orange_btn(href='#')
+                                    span В корзину
+                              +params(true)
+
+              #tab_3.cart_tab
+                .section_inner
                   .product_block
                     p Скидка клиента
 
